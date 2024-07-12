@@ -4,6 +4,7 @@ Copyright © 2024 NAME HERE <EMAIL ADDRESS>
 package cmd
 
 import (
+	"github.com/orangbus/cmd/bootstrap"
 	"os"
 
 	"github.com/spf13/cobra"
@@ -14,9 +15,13 @@ var rootCmd = &cobra.Command{
 	Use:   "cmd",
 	Short: "A brief description of your application",
 	Long:  "一个小小的个人命令行工具",
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
+	PersistentPreRun: func(cmd *cobra.Command, args []string) {
+		// 加载配置文件
+		bootstrap.SetUp()
+	},
+	Run: func(cmd *cobra.Command, args []string) {
+
+	},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.

@@ -7,7 +7,7 @@ import (
 )
 
 var versionCmd = &cobra.Command{
-	Use:   "v",
+	Use:   "version",
 	Short: "显示版本信息",
 	Args:  cobra.NoArgs, // 不允许传参
 	Run: func(cmd *cobra.Command, args []string) {

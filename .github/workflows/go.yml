@@ -6,13 +6,23 @@ name: golang打包
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+#  pull_request:
+#    branches: [ "master" ]
 
 jobs:
 
   build:
     runs-on: ubuntu-latest
+#    strategy:
+#      include:
+#        - goarch: amd64
+#          goos: linux
+#        - goarch: amd64
+#          goos: darwin
+#        - goarch: arm64
+#          goos: linux
+#        - goarch: arm64
+#          goos: darwin
     steps:
     - uses: actions/checkout@v4
 
@@ -24,9 +34,9 @@ jobs:
     - name: Build
       run: go build  -o tmd .
 
-#    - name: Upload Artifact (Linux)
-#      uses: actions/upload-artifact@v4
-#      with:
-#        name: tmd
-#        path: ./tmd
-#        if-no-files-found: ignore
+    - name: Upload Artifact (Linux)
+      uses: actions/upload-artifact@v4
+      with:
+        name: tmd
+        path: ./tmd
+        if-no-files-found: ignore
