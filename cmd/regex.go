@@ -60,18 +60,21 @@ func parseDoc() []string {
 		defer file.Close()
 		all, err := io.ReadAll(file)
 		if err != nil {
+			console.Error(err.Error())
 			return list
 		}
 		content = string(all)
 	} else {
 		response, err := http.Get(spider_url)
 		if err != nil {
+			console.Error(err.Error())
 			return nil
 		}
 		defer response.Body.Close()
 
 		all, err := io.ReadAll(response.Body)
 		if err != nil {
+			console.Error(err.Error())
 			return list
 		}
 		content = string(all)
