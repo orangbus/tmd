@@ -51,7 +51,7 @@ func testFile(path string) {
 	for k, v := range list {
 		if k > 0 {
 			article := models.Articles{
-				Name:     v[6],
+				Title:    v[6],
 				CateName: v[2],
 				Content:  v[3],
 			}
@@ -79,7 +79,7 @@ func SaveDataBase(list [][]string, name, cateName, content int) error {
 	for k, v := range list {
 		if k > 0 {
 			article := models.Articles{
-				Name:     v[name],
+				Title:    v[name],
 				CateName: v[cateName],
 				Content:  v[content],
 			}
