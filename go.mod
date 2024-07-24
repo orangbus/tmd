@@ -3,6 +3,7 @@ module github.com/orangbus/cmd
 go 1.22.3
 
 require (
+	github.com/PuerkitoBio/goquery v1.9.2
 	github.com/elastic/go-elasticsearch/v8 v8.14.0
 	github.com/fatih/color v1.14.1
 	github.com/gin-gonic/gin v1.10.0
@@ -22,7 +23,6 @@ require (
 )
 
 require (
-	github.com/PuerkitoBio/goquery v1.9.2 // indirect
 	github.com/andybalholm/cascadia v1.3.2 // indirect
 	github.com/bytedance/sonic v1.11.6 // indirect
 	github.com/bytedance/sonic/loader v0.1.1 // indirect
